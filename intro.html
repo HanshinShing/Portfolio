@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Check in Hsinchu</title>
+		<link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+		
+		<!-- BOOTSTRAP -->
+    	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    	<script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<!-- JQuery UI -->
+		<link rel="stylesheet" 
+		  href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+	    <!-- CSS -->
+	    <link rel="stylesheet" href="final.css" type="text/css">
+
+	    <!-- JS -->
+	   <script src="final.js"></script>
+
+	</head>
+	<body>	
+		<!-- NAVIGATION -->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div id="mynav">
+	        <a class="navbar-brand navbar-left" href="index.html">
+	          <img src="Media/main_word1.png" id="nav_logo">
+	        </a>
+	        <ul class="navbar-nav nav navbar-right">
+	            <li id="p1"><a href="intro.html">主視覺</a></li>
+	            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+	            <li id="p3"><a href="money.html">怪獸幣</a></li>
+	            <li id="p4"><a href="fun.html?money=10">今日運勢</a></li>
+	            <li id="p5"><a href="contact.html">想說的</a></li>
+	        </ul>
+	      </div>
+	    </nav>
+
+	    <!-- TABLE 1 -->
+		<div id="tb1_box">
+			<table class="intro_table_box">
+				<tr>
+					<td class="tb_img">
+						<img src="Media/Intro/main.gif" id="intro2_pic"></img>
+					</td>
+					<td>
+						<div class="intro2_1_txt">2020 台灣設計展找來卵形設計工作室負責人 #葉忠宜 操刀，以主題『Check in 新竹－人來風』為核心概念，使用大量活潑、彈性的符號來營造『Check in』與『風』生動的動態感。
+						為了打開旅人的感官、讓大家重新體驗不一樣的新竹，一定要創造令人印象深刻的旅程~
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- TABLE 2 -->
+		<table class="intro_table_box">
+			<tr>
+				<td>
+					<img src="Media/Intro/intro2_1.jpg" id="intro2_1_pic" class="hiding" ></img>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="intro2_1_txt hiding" id="tb2_txt">設計師葉忠宜將『風、Wifi、竹、網路』等 4 個元素彈性組合，如同登陸新竹時，<br>從出發 → wifi / google → Check in → anywhere 的過程般，<br>在充滿科技感的智慧城市中恣意探索。
+					<br><br><br>
+					<div id="tb2_txt2" class="hiding"><span class="span1">#風</span> 在本次的主視覺中，被以『風轉』的意象來幻化成可愛 #新竹獸 的原型，<br>&emsp;&emsp;&emsp;&thinsp;帶起 10 月『人來風』的潮流；<br><span class="span2">#竹</span> 則彷彿像是前進的箭頭，被擴大至各種應用的指示圖形上。
+					<br>而標準字的視覺也結合台灣常見的 #歡迎跑馬燈 概念，創造了各種動態應用的可能！
+					</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<!-- TABLE 3 -->
+		<div id="tb3_box">
+			<table class="intro_table_box hiding">
+				<tr>
+					<td id="tb3_img">
+						<img src="Media/Intro/M1.jpg" id="img_trans2"> 
+					</td>
+					<td>
+						<div id="tb3_txt"><span class="span1 tb3_txt_title">『H.Monsters 新竹獸出沒計畫』</span>，創造出<b>11 隻</b>造型各異的<span class="span2 tb3_txt_title">『新竹獸』</span>，大型的充氣裝置矗立在市中心，分佈在 2020 台灣設計展的觀展動線上，從新竹轉運站、體育館到東門市場，都能看見可愛新竹獸的身影。</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- FOOTER -->
+	    <div id="main_footer">
+	      <img id="footer_pic" src="Media/main_2-1.png"></img>
+	    </div>
+
+		 <script> 
+		 //----------IMG TRANSITION----------
+        var k=0;  
+       	var img_array = new Array("Media/Intro/M1.jpg","Media/Intro/M2.jpg","Media/Intro/M3.jpg","Media/Intro/M4.jpg","Media/Intro/M5.jpg","Media/Intro/M6.jpg","Media/Intro/M7.jpg","Media/Intro/M8.jpg"); 
+
+        function transImg(){ 
+          if(k>img_array.length-1) 
+            k=0;//超過最後一張，回去第一張k=0
+          
+          for(var i=0;i<img_array.length;i++){ 
+              if(i==k){ 
+                document.getElementById("img_trans2").src=img_array[i];
+              }
+          }
+          k++;
+        }
+
+        setInterval("transImg()",2000);
+
+  		</script>
+	
+	</body>
+</html>

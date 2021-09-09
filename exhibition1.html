@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Check in Hsinchu</title>
+		<link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+		
+		<!-- BOOTSTRAP -->
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<!-- JQuery UI -->
+		<link rel="stylesheet" 
+			href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		
+		<!-- CSS -->
+    	<link rel="stylesheet" href="final.css" type="text/css">
+
+    	<!-- JS -->
+	   <script src="final.js"></script>
+		
+	</head>
+	<body>	
+		<!-- NAVIGATION -->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div id="mynav">
+	        <a class="navbar-brand navbar-left" href="index.html">
+	          <img src="Media/main_word1.png" id="nav_logo">
+	        </a>
+	        <ul class="navbar-nav nav navbar-right">
+	            <li id="p1"><a href="intro.html">主視覺</a></li>
+	            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+	            <li id="p3"><a href="money.html">怪獸幣</a></li>
+	            <li id="p4"><a href="fun.html?money=10">今日運勢</a></li>
+	            <li id="p5"><a href="contact.html">想說的</a></li>
+	        </ul>
+	      </div>
+	    </nav>
+
+	    <!-- MAP -->
+		<div id="map_box">
+			<img src="Media/Ex/map.jpg" id="map"></img>
+		</div>
+
+		<!-- EXHIBITION BTNS -->
+		<div id="btn_div">
+			<button class="ex_btn" id="ex_btn1"><a href="#ex1_all" class="btn_a">主展區1 新竹公園</a></button>
+			<button class="ex_btn" id="ex_btn2"><a href="#ex2_all" class="btn_a">主展區2 舊城區</a></button>
+			<button class="ex_btn" id="ex_btn3"><a href="#ex3_all" class="btn_a">城市步行廊道</a></button>
+		</div>
+
+		<br><br><br>
+
+		<!-- EXHIBITION 1 -->
+		<div id="table_div">
+			<img src="Media/Ex/title_b1.png" class="title_box" id="title1"></img>
+		<table id="ex1_all">
+			<tr>
+				<td class="table_s_title">#T1 城市終端機</td>
+				<td class="table_s_title">#T2 美感電域</td>
+				<td class="table_s_title">#T3 世界最美的教科書展</td>
+			</tr>
+			<tr>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T1_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T2_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T3_1.jpg" class="ex_pic"></img></div></td>
+			</tr>
+			<tr>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/ysrDx2dPowzj2iEz6" class="table_a" target="_blank">新竹市體育館</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/TsFsmKwAVfT7qyay6" class="table_a" target="_blank">孔廟廣場</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/SxjR84Um28HjgLVEA" class="table_a" target="_blank">孔廟</a></td>
+			</tr>
+			<tr >
+				<td><p class="table_p">來到城市終端機的中心，這裡就是一個運算處理器，負責採集、解碼、分析各式各樣的數據，資料不斷更新與傳遞，看看能夠提出什麼讓城市生活更好的應用方案！當我們跟著數據一起走進去的同時，也成為正在被記錄的數據。</p></td>
+				<td><p class="table_p">好評如潮的『美感電域 POWER ZONE - 變電箱科普特展』新竹站就在台灣設計展！以創新文化為傲的新竹市，與台電合作推動『減法思維』的變電箱塗裝設計，打造以人為本、幸福友善的城市環境美學。今天就帶大家搶先一探究竟！</p></td>
+				<td><p class="table_p">由都市酵母團隊策展的『世界最美的教科書展』新竹站，以台灣、日本的教科書切入觀察，呈現從古到今兩地教育策略與思考的差異</p></td>
+			</tr>
+			<tr>
+				<td class="table_s_title">#T4 超連結 Hyper_Link</td>
+				<td class="table_s_title">#T5 Ｏ 循環設計展</td>
+				<td class="table_s_title">#T6 有種 新竹</td>
+			</tr>
+			<tr>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T4_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T5_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/T6_1.jpg" class="ex_pic"></img></div></td>
+			</tr>
+			<tr>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/W2iKa932MMhEY5gg6" class="table_a" target="_blank">風 livehouse</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/vbYfPDAN61U6hAke9" class="table_a" target="_blank">新竹玻璃工藝博物館</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/3QTe5PNrtyRzSQGD8" class="table_a" target="_blank">新竹市動物園</a></td>
+			</tr>
+			<tr>
+				<td><p class="table_p">有形的交通工具連結了實體的社會，無形的網路平台則連結了虛擬的社群；人類不斷創造科技，科技也不斷改變人類的生活。歡迎你來到風 livehouse，感受人與人、人與科技之間產生無限可能的 #超連結！</p></td>
+				<td><p class="table_p">團隊用 6 種在新竹實現、以循環為本的產業，告訴你循環設計如何改變一座城市的樣貌。在互動體驗中，每個人都能成為驅動的力量，展現『循環思維』下創造的無限希望！</p></td>
+				<td><p class="table_p">『有種 新竹』以多個分區展現新竹多元的在地生活面向：『有種 吃』呈現多種#新竹在地美食；『有種 玩』以擂台形式帶出多種生活物件的新、舊型態；而『有種 買』集結各種在地特色商品，讓你將新竹的生活氣味通通打包帶走！</p></td>
+			</tr>
+		</table>
+		<br><br><br>
+
+		<!-- EXHIBITION 2 -->
+		<table id="ex2_all">
+			<img src="Media/Ex/title_b2.png" class="title_box" id="title2"></img>
+			<tr  class="hiding">
+				<td class="table_s_title">#M1 重啟・未來閱讀</td>
+				<td class="table_s_title">#M2 風城轉生站</td>
+				<td class="table_s_title">#M3 竹塹練工房</td>
+			</tr>
+			<tr>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/M1_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/M2_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/M3_1.jpg" class="ex_pic"></img></div></td>
+			</tr>
+			<tr>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/DWtAaPsBfpeKcMWR8" class="table_a" target="_blank">新竹州圖書館</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/G2rgmcuY4mzg8jek9" class="table_a" target="_blank">新竹市美術館</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/M4PHyYZbFmQdHeqY6" class="table_a" target="_blank">大同108舊城再生基地 - 大同小軼</a></td>
+			</tr>
+			<tr>
+				<td><p class="table_p">塵封 36 年的 #新竹州圖書館，終於要華麗重生了！2020 台灣設計展將在州圖舉辦『重啟・未來閱讀』特展，以當代藝術角度，帶你重新思考 #閱讀 的意義！</p></td>
+				<td><p class="table_p">新竹市美術館在展覽期間變成了『舊城旅遊服務站』，帶你找到屬於自己的新竹旅行地圖！</p></td>
+				<td><p class="table_p">你知道台灣第一種被正式定下名稱的植物是甚麼嗎？#蓪草 是新竹市 200 年前最重要的經濟作物之一，不但被用來製成台灣第一張植物紙張、更曾締造多樣的工藝作品。</p></td>
+			</tr>
+			<tr>
+				<td class="table_s_title">#M4 九降米粉道</td>
+				<td class="table_s_title">#M5 有樂電影院</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/M4_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/M5_1.jpg" class="ex_pic"></img></div></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/iHbeGNohFVfzEy2r5" class="table_a" target="_blank">新州屋</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/xbPDfKAgHQYW7kje8" class="table_a" target="_blank">新竹市影像博物館</a></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><p class="table_p">今天我們要帶你走進這棟建於 1934 年的新竹第一間百貨公司舊址新州屋，翻出你的味覺記憶，來一盤想像中的新竹米粉炒！以食物設計體驗的客觀手法呈現米粉的滋味。</p></td>
+				<td><p class="table_p">於 1933 年開幕的新竹市影像博物館原名『有樂館』，是全台灣首座配有冷氣設備的歐式劇場。在 2020 台灣設計展，我們要邀請你到這座 #有樂電影院 來欣賞台灣動畫、觀賞兒童觀點的影像與人物紀實影片，品味記憶中人與家鄉的故事！</p></td>
+				<td></td>
+			</tr>
+		</table>
+		<br><br><br>
+
+		<!-- EXHIBITION 3 -->
+		<img src="Media/Ex/title_b3.png" class="title_box" id="title3"></img>
+		<table id="ex3_all">
+			<tr>
+				<td class="table_s_title">#P1 大車站進行式</td>
+				<td class="table_s_title">#P2 大風吹泡泡</td>
+				<td class="table_s_title">#P3 XYZ 嬉遊中—新竹搖擺</td>
+			</tr>
+			<tr>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/P1_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/P2_1.jpg" class="ex_pic"></img></div></td>
+				<td class="table_img"><div class="table_box"><img src="Media/Ex/P3_1.jpg" class="ex_pic"></img></div></td>
+			</tr>
+			<tr>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/r8oQrc3bT7c3yTHU8" class="table_a" target="_blank">新竹轉運站</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/Ya52ztehvbryL5Yh9" class="table_a" target="_blank">新竹公園 圓形廣場</a></td>
+				<td class="table_loc"><a title="瀏覽Google Map" href="https://goo.gl/maps/T6otbGY9Aazi64mE9" class="table_a" target="_blank">後站機車停車場</a></td>
+			</tr>
+			<tr>
+				<td><p class="table_p">新竹市政府提出以 #跨站式平台 結合前後站的『大車站計畫』，整合各類運輸節點，並以公園、行人通廊串連城區綠帶系統和商業帶，形成一個流通的生活場域。</p></td>
+				<td><p class="table_p">內有多組圓形彈跳裝置，包含直徑 9 米的 #跳跳瘋 和直徑 3 米的 #泡泡瘋——『跳跳瘋』讓大人小孩都能在上面攀爬、玩樂，而『泡泡瘋』則用定時噴發的泡泡和燈光製造快樂氛圍。</p></td>
+				<td><p class="table_p">這次他們以『新竹的一道風經過』為概念，為停車場的鋪面掛上隨風起舞的布幔、再用雙人鞦韆帶著大小朋友搖擺嬉遊！</p></td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- BOTTOM CONTENT-->
+	<img src="Media/Ex/mon1.png" id="btm_mon"></img>
+	<div id="choose_text" class="hiding">看完這麼多展區，還是不知道要去哪個嗎？<br>讓新竹獸幫你決定!</div>
+	<button class="ex_btn hiding" id="choose_btn">選擇障礙QQ</button>
+
+	<!-- DIALOG -->
+	<div id="dlg">
+		<span id="random_exh"></span>
+	</div>
+
+	<!-- FOOTER -->
+    <div id="main_footer">
+      <img id="footer_pic" src="Media/main_2-1.png"></img>
+    </div>
+
+	<script>
+	//----------DIALOG----------
+	$('#dlg').dialog({
+        autoOpen:false,
+        draggable:false,
+        modal:true,
+        resizable:false
+      });
+
+	//----------RANDOM CHOOSE EXHIBITION----------
+	$('#choose_btn').click(function(){
+		var all_exhibition=['#T1 城市終端機','#T2 美感電域','#T3 世界最美的教科書展','#T4 超連結 Hyper_Link','#T5 Ｏ 循環設計展','#T6 有種 新竹','#M1 重啟・未來閱讀','#M2 風城轉生站','#M3 竹塹練工房','#M4 九降米粉道','#M5 有樂電影院','#P1 大車站進行式','#P2 大風吹泡泡','#P3 XYZ 嬉遊中—新竹搖擺'];
+		var random_num=Math.floor(Math.random()*14);
+		console.log(random_num);
+
+		for(var i=1;i<=14;i++){
+		  if(i==random_num){
+		    var chosen_exh="去"+all_exhibition[i]+"吧!";
+		    $('#dlg').dialog('open');
+		    $('#random_exh').text(chosen_exh);
+		    console.log(chosen_exh);
+		  }
+		}
+    });
+
+    //----------PREPEND LOCATION IMG----------
+    $('.table_a').each(function(){ 
+    	$(this).prepend('<img src="Media/Ex/location.png" class="loc_img">'); 
+    });
+
+    //對每個表格tr加上.hiding
+    $('tr').each(function(){ 
+    	$(this).addClass("hiding"); 
+    });
+
+    //----------點擊BTN 平滑捲動----------
+    $(document).on('click','.btn_a ',function(event){
+  		event.preventDefault();
+  		var target = $(this).attr("href");
+  		var target_place=$(target).offset().top;
+  		console.log("target_place"+target_place);
+  		target_place=target_place-300;
+  		$('html,body').animate({
+   		scrollTop: target_place
+  		},600);
+	});
+
+	</script>
+
+	</body>
+</html>

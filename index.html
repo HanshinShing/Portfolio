@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+    
+    <title>Check in Hsinchu</title>
+    <!-- BOOTSTRAP -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- JQuery UI -->
+    <link rel="stylesheet" 
+      href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="final.css" type="text/css">
+
+    <!-- JS -->
+     <script src="final.js"></script>
+    
+
+	</head>
+
+	<body>	
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div id="mynav">
+        <a class="navbar-brand navbar-left" href="index.html">
+          <img src="Media/main_word1.png" id="nav_logo">
+        </a>
+        <ul class="navbar-nav nav navbar-right">
+            <li id="p1"><a href="intro.html">主視覺</a></li>
+            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+            <li id="p3"><a href="money.html">怪獸幣</a></li>
+            <li id="p4"><a href="fun.html?money=10">今日運勢</a></li>
+            <li id="p5"><a href="contact.html">想說的</a></li>
+        </ul>
+      </div>
+    </nav>
+
+   <!--  MAIN LOGO -->
+  	<div id="main_logo" class="main_gray">
+  		  <img src="Media/Index/wind2.png" id="main_pic" class="main_adj"></img>
+  		  <img src="Media/Index/eyes2.png" id="main_pic_eyes1" class="main_adj"></img> 
+        <img src="Media/Index/point.png" id="point"></img>
+  	</div>
+
+    <!--  MAIN INTRO -->
+  	<div id="main_intro">
+  		<img src="Media/Index/main_word2.png" id="main_word1" class="left_move hiding"></img>
+      <p id="intro_p"class="hiding"><b>2020 台灣設計展</b>落腳新竹，邀請你一起拜訪這座低調、典雅的城市，沿著 2 公里長的步行路線盡情探索！過去幾年的設計展都是在各城市裡的展館舉行，今年則反向操作，將整個城市變成一個設計展。新竹市近年推動 <b>#步行城市</b>，從公共建設的導入、到騎樓的順平計畫，讓這次的策展路線更適合用漫步的方式細細品味。<br><br>請注意！我們還有來自城市各個角落出沒的<b>【新竹獸】</b>們！讓我們進擊城市，登入新竹！CHECK in HSINCHU！有種，就來風吧！
+      </p>
+  	</div>
+
+    <!--  MAIN VIEW -->
+  	<div id="main_video">
+  		<iframe id="v1" src="https://www.youtube.com/embed/_HtxzJgOgS0" allowfullscreen></iframe>
+      <img src="Media/Index/T1_1.jpg" id="img_trans"> 
+  	</div>
+
+    <!-- FOOTER -->
+    <div id="main_footer">
+      <img id="footer_pic" src="Media/main_2-1.png"></img>
+    </div>
+
+    <script> 
+        //----------IMG TRANSITION----------
+        var k=0;  
+        var img_array=new Array("Media/Index/F1.jpg","Media/Index/F2.jpg","Media/Index/F3.jpg","Media/Index/F4.jpg","Media/Index/F5.jpg","Media/Index/F6.jpg","Media/Index/F7.jpg","Media/Index/F8.jpg","Media/Index/F9.jpg"); 
+
+        function transImg(){ 
+          if(k>img_array.length-1) 
+            k=0;//超過最後一張，回去第一張k=0
+          
+          for(var i=0;i<img_array.length;i++){ 
+              if(i==k){ 
+                document.getElementById("img_trans").src=img_array[i];
+              }
+          }
+          k++;
+        }
+
+        setInterval("transImg()",2000);
+
+        //滑鼠在#main_logo上時，指標有#point跟著
+        $(window).mousemove(function(evt){
+          var pgx=evt.pageX;
+          var pgy=evt.pageY;
+          var x=pgx-$("#main_logo").offset().left;
+          var y=pgy-$("#main_logo").offset().top;
+          
+          if(y<0 || y>$("#main_logo").outerHeight()){
+            $("#point").css("opacity",0);
+          } 
+          else{
+            $("#point").css("opacity",1);
+          }
+            
+          $("#point").css("left",x+"px");
+          $("#point").css("top",y+"px");
+        });
+
+  </script>
+    
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Check in Hsinchu</title>
+		<link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+
+		<!-- BOOTSTRAP -->
+    	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    	<script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	    <!-- JQuery UI -->
+	    <link rel="stylesheet" 
+	      href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css">
+	    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	    
+	    <!-- CSS -->
+	    <link rel="stylesheet" href="final.css" type="text/css">
+
+	    <!-- JS -->
+	   <script src="final.js"></script>
+		
+	</head>
+	<body>	
+		<!-- NAVIGATION -->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div id="mynav">
+	        <a class="navbar-brand navbar-left" href="index.html">
+	          <img src="Media/main_word1.png" id="nav_logo">
+	        </a>
+	        <ul class="navbar-nav nav navbar-right">
+	            <li id="p1"><a href="intro.html">主視覺</a></li>
+	            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+	            <li id="p3"><a href="money.html">怪獸幣</a></li>
+	            <li id="p4"><a href="fun.html?money=10">今日運勢</a></li>
+	            <li id="p5"><a href="contact.html">想說的</a></li>
+	        </ul>
+	      </div>
+	    </nav>
+		
+		<img src="Media/Contact/contact_title.png" id="contact_title"></img>
+
+		<div id="talk_box">
+		<img src="Media/Contact/talk_f1.png" id="talk_f"></img>
+
+		<!-- FORM -->
+		<form class="hiding">
+				<label>
+					我是<br><input id="nameText" type="text">  
+				</label>
+				
+				<br><br>
+
+				<label>我想說...<br><textarea id="contentText" cols="20" rows="5"></textarea></label>
+				<div>
+         			<input type="button" value="傳送" onclick="send_content()" id="send_btn">
+         			<a id="mailTo"></a>
+     			</div>
+		</form>
+		</div>
+
+		<!-- FOOTER -->
+	    <div id="main_footer">
+	      <img id="footer_pic" src="Media/main_2-1.png"></img>
+	    </div>
+
+		<script>
+		//----------SEND EMAIL----------
+	    function send_content(){
+	        var goal = "shingrabbit@gmail.com";
+	        var name = nameText.value;
+	        var subject = "Check in Hsinchu留言";
+	        var content = contentText.value+'%0A%0A%0A'+nameText.value+" 留";//%0A換行
+
+	        mailTo.href="mailto:"+goal+"?subject="+subject+"&body="+content;
+	        mailTo.click();
+	    }
+		</script>
+
+	</body>
+</html>

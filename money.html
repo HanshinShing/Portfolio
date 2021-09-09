@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Check in Hsinchu</title>
+		<link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+
+		<!-- BOOTSTRAP -->
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<!-- JQuery UI -->
+		<link rel="stylesheet" 
+			href="http://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		
+		<!-- CSS -->
+    	<link rel="stylesheet" href="final.css" type="text/css">
+
+    	<!-- JS -->
+	   <script src="final.js"></script>
+		
+	</head>
+	<body>	
+		<!-- NAVIGATION -->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div id="mynav">
+	        <a class="navbar-brand navbar-left" href="index.html">
+	          <img src="Media/main_word1.png" id="nav_logo">
+	        </a>
+	        <ul class="navbar-nav nav navbar-right">
+	            <li id="p1"><a href="intro.html">主視覺</a></li>
+	            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+	            <li id="p3"><a href="money.html">怪獸幣</a></li>
+	            <li ><a href="fun.html?money=10" id="p4">今日運勢</a></li>
+	            <li id="p5"><a href="contact.html">想說的</a></li>
+	        </ul>
+	      </div>
+    	</nav>
+
+    	<!-- MONEY INTRO -->
+		<div id="money_intro_box">
+			<table>
+				<tr>
+					<td colspan="2"><div id="money_intro1"><img src="Media/Money/money_title.png" class="money_title_img"></img></div></td>
+				</tr>
+
+				<tr>
+					<td><img src="Media/Money/money2.png" id="money_img"></img></td>
+					<td><div class="money_intro_txt">是一種以新竹獸為設計雛形的虛擬幣，<br>幣值只有10怪獸幣，可以用來改運XD<br><span>/*僅在此網站上流通*/</span></div></td>
+				</tr>
+					
+				<tr>
+					<td colspan="2"><div class="money_intro_main hiding"><div class="tr_money">你目前擁有的怪獸幣為</div><div class="tr_money" id="money">10</div><div class="tr_money">怪獸幣</div></div></td>
+				</tr>
+					
+				<tr>
+					<td colspan="2"><div><img src="Media/Money/money_title2.png" class="money_title_img" id="money_title_img2"></img></div></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><div class="money_intro_txt hiding" id="money_intro_txt2">0~10的數字，<br>你有5次的機會猜，<br>猜中就可以獲得10怪獸幣!</div></td>
+				</tr>
+					
+				<tr class="hiding">
+					<td colspan="2"><span id="count">5</span>
+						<div id="slider"></div></td>
+				</tr>
+
+				<tr class="hiding">
+					<td colspan="2"><button id="guess_btn">猜猜看</button></td>
+				</tr>	
+			</table>
+		</div>
+
+		<br>
+		<!-- DIALOG -->
+		<div id="dlg2">
+			<span id="dlg_span2"></span>
+		</div>
+
+		<!-- FOOTER -->
+	    <div id="main_footer">
+	      <img id="footer_pic" src="Media/main_2-1.png"></img>
+	    </div>
+
+		<script>
+		//----------DIALOG----------
+		$('#dlg2').dialog({
+	        autoOpen:false,
+	        draggable:false,
+	        modal:true,
+	        resizable:false
+      	});
+
+      	//----------SLIDER----------
+		function sliding(){
+			var slider_count=$('#slider').slider('value');
+			$('#count').text(slider_count);
+		}
+
+		$('#slider').slider({
+			value:5,
+			min:0,
+			max:10,
+			step:1,
+			change:sliding
+		});
+		
+		//----------GUESS SLIDER NUMBER----------
+		var random_num=Math.floor(Math.random()*11);
+		var choose_num=5;//guess times
+	    console.log("random num="+random_num);
+
+		$('#guess_btn').click(function(){
+			$('#dlg2').dialog('open');
+	        var slider_count=$('#slider').slider('value');
+	        var show_hint_txt="";
+
+	        if(choose_num>=1){
+	        	if(slider_count==random_num){
+	           		$('#dlg_span2').text("恭喜你猜對了!獲得10怪獸幣");
+	           		choose_num--;
+	           		var money_text=$('#money').text();
+	           		var money_text=parseInt(money_text)+10;
+	           		$('#money').text(money_text);
+
+	           		//若猜對則重設遊戲環境
+	           		$('#guess_btn').text("再一輪");
+	           		random_num=Math.floor(Math.random()*11);
+	           		console.log("new num="+random_num);
+	           		choose_num=5;
+	           		$('#slider').slider({value:5});
+	           		$('#count').text("5");
+
+	           		//若猜對->改變“今日運勢”頁的網址 藉此傳money值
+	           		money_link="fun.html?money="+money_text;
+					console.log("new+money"+money_link);
+					$('#p4').attr('href',money_link);
+	           	}
+	           	else if(slider_count>random_num){
+	           		choose_num--;
+	           		if(choose_num==0)
+	           			$('#dlg_span2').text("猜錯摟...你沒有機會摟QQ...");
+	           		else{
+	           			show_hint_txt+="再小一點~你剩下";
+		           		show_hint_txt+=choose_num;
+		           		show_hint_txt+="次機會";
+		           		$('#dlg_span2').text(show_hint_txt);
+	           		}
+	           	}
+	           	else if(slider_count<random_num){
+	           		choose_num--;
+	           		if(choose_num==0)
+	           			$('#dlg_span2').text("猜錯摟...你沒有機會摟QQ...");
+
+	           		else{
+	           			show_hint_txt="再大一點~你剩下";
+		           		show_hint_txt+=choose_num;
+		           		show_hint_txt+="次機會";
+		           		$('#dlg_span2').text(show_hint_txt);
+	           		}
+	           	}
+	        }
+	        else
+	        	$('#dlg_span2').text("機會用完摟QQ...");
+        });
+		</script>
+
+	</body>
+</html>

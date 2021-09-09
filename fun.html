@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Check in Hsinchu</title>
+		<link rel="Shortcut Icon" href="Media/wind_icon.ico" type="image/x-icon">
+
+		<!-- BOOTSTRAP -->
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://maxcdn.bootstrap.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<!-- JQuery UI -->
+		<link rel="stylesheet" 
+			href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		
+		<!-- CSS -->
+    	<link rel="stylesheet" href="final.css" type="text/css">
+
+    	<!-- JS -->
+	   <script src="final.js"></script>
+
+	</head>
+	<body>	
+		<!-- NAVIGATION -->
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div id="mynav">
+	        <a class="navbar-brand navbar-left" href="index.html">
+	          <img src="Media/main_word1.png" id="nav_logo">
+	        </a>
+	        <ul class="navbar-nav nav navbar-right">
+	            <li id="p1"><a href="intro.html">主視覺</a></li>
+	            <li id="p2"><a href="exhibition1.html">展區介紹</a></li>
+	            <li id="p3"><a href="money.html">怪獸幣</a></li>
+	            <li id="p4"><a href="fun.html?money=10">今日運勢</a></li>
+	            <li id="p5"><a href="contact.html">想說的</a></li>
+	        </ul>
+	      </div>
+	    </nav>
+		
+		<table>
+			<tr>
+				<td class="card_intro_main">
+					<!-- CHECK OUT 你的今日運勢！ -->
+					<img src="Media/Fun/checkout.png" id="checkout"></img>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="centered-wrap">
+					  <div class="card-wrap">
+					    <div class="card">
+					      <!-- 卡牌正面 -->
+					      <div class="card-front">
+					        <img src="Media/Fun/card_back.png" id="card_back"></img>
+					       </div>
+					      <!-- 卡牌背面 -->
+					      <div class="card-back"></div>
+					    </div>
+					  </div>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<button id="card_btn" class="fun_btn" onclick="Change_Card()">抽卡</button>
+				</td>
+			</tr>
+			<tr class="tr_luck hiding">
+				<td><div class="tr_luck">你目前有</div><div class="tr_luck" id="current_money"></div><div class="tr_luck">怪獸幣</div><br><div id="tr_luck2">/*10怪獸幣即可改運！*/</div>
+				</td>
+			</tr>
+			<tr class="hiding">
+				<td>
+					<button id="lucky_btn" class="fun_btn" onclick="Lucky()">! 我要改運 !</button>
+				</td>
+			</tr>
+		</table>
+		<!-- DIALOG -->
+		<div id="dlg3">
+			<span id="dlg_span3">沒錢了...</span>
+		</div>
+
+		<!-- FOOTER -->
+	    <div id="main_footer">
+	      <img id="footer_pic" src="Media/main_2-1.png"></img>
+	    </div>
+
+
+		<script>
+		//----------DIALOG----------
+		$('#dlg3').dialog({
+	        autoOpen:false,
+	        draggable:false,
+	        modal:true,
+	        resizable:false
+	      });
+
+		//----------改運前----------
+		function Change_Card(){
+			var card_link=document.getElementById('card_back');
+			var random_num=Math.floor(Math.random()*100)+1;
+			console.log("ori_luck"+random_num);
+			var new_link="Media/Fun/card_";
+			
+			switch(true){
+					case(random_num>=1&&random_num<=90):
+						new_link+="1.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=91&&random_num<=96):
+						new_link+="2.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=97&&random_num<=98):
+						new_link+="3.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=98&&random_num<=100):
+						new_link+="4.png";
+						card_link.src=new_link;
+						break;
+				}
+		}
+		//----------改運後----------
+		function Change_Card_2(){
+			var card_link=document.getElementById('card_back');
+			var random_num=Math.floor(Math.random()*100)+1;
+			console.log("new_luck"+random_num);
+			var new_link="Media/Fun/card_";
+			
+			switch(true){
+					case(random_num>=1&&random_num<=5):
+						new_link+="2.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=6&&random_num<=29):
+						new_link+="3.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=30&&random_num<=59):
+						new_link+="4.png";
+						card_link.src=new_link;
+						break;
+					case(random_num>=60&&random_num<=100):
+						new_link+="5.png";
+						card_link.src=new_link;
+						break;
+				}
+		}
+		//----------改運 BTN----------
+		function Lucky(){
+			if(money>=10){
+				$('#lucky_btn').text("已改運! 再抽一次卡吧");
+				money=money-10;
+				$('#current_money').text(money);
+				$('#card_btn').attr('onclick','Change_Card_2()');
+				$('#card_btn').text("再抽抽!");
+			}
+			else
+				$('#dlg3').dialog('open');
+		}
+
+		//----------取得由money.html頁回傳之值----------
+		function ReturnMoney(){
+		   var link = window.location.search; //獲取網址中"?"符號後的字串
+		   var theRequest = new Object();
+		   if (link.indexOf("?") != -1) {
+		      var str=link.substr(1);
+		      strs=str.split("&");
+		      for(var i=0;i<strs.length;i++) {
+		         theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+		      }
+		   }
+		   return theRequest;
+		}
+
+		var Request = new Object();
+		Request = ReturnMoney();
+		var money = Request['money']; 
+		$('#current_money').text(money);
+		console.log("money:"+money);
+
+		</script>
+
+		
+	</body>
+</html>
